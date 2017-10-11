@@ -1,0 +1,5 @@
+User-Agent: *
+Disallow: /reviews
+Disallow: /delay
+Sitemap: http://1bags.by/sitemap.xml
+Host: 1bags.by

@@ -1,0 +1,62 @@
+/*
+ * @author ООО "Фабрика проектов"
+ * @copyright 2013
+ */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    font: 16px/20px "Trebuchet MS", Helvetica, Arial, sans-serif;
+}
+body {
+    background-color: #eee;
+}
+.wrap-form {
+    width: 365px;
+    margin: 10% auto 0 auto;
+    padding: 93px 0 0 0;
+    position: relative;
+}
+.wrap-form .form-horizontal .controls {
+    margin-left: 80px;
+}
+.wrap-form .form-horizontal .control-label {
+    text-align: left;
+    width: auto;
+}
+.wrap-form .form-horizontal .btn {
+    float: right;
+    width: 100px;
+}
+.wrap-form legend {
+    font-size: 18px;
+}
+.wrap-form .logo {
+    position: absolute;
+    top: 72px;
+    right: 0;
+}
+#time-block {
+    font-weight: bold;
+}
+.btn-info {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #49afcd;
+  *background-color: #076B87;
+  background-image: -moz-linear-gradient(top, #5bc0de, #076B87);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#076B87));
+  background-image: -webkit-linear-gradient(top, #5bc0de, #076B87);
+  background-image: -o-linear-gradient(top, #5bc0de, #076B87);
+  background-image: linear-gradient(to bottom, #5bc0de, #076B87);
+  background-repeat: repeat-x;
+  border-color: #076B87 #076B87 #1f6377;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff076B87', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+blockquote a {
+    color: #016BA3;
+}
