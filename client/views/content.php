@@ -1,4 +1,17 @@
 <body>
+<div class="mobile-nav">
+	<a href="#product-menu">Товары</a>
+	<a href="#main-menu">Меню</a>
+</div>
+<div class="mobile-menu">
+	<nav id="main-menu">
+		<?=$tMenubuf?>
+	</nav>
+	<nav id="product-menu">
+		<?php $vari = false?>
+		<?php echo buildNavMenu($_catalog_url, $TABLE['catalog_tree'], $ClientConfig['catalog_root'], 'mob_menu') ?>
+	</nav>
+</div>
 <!--
     <div>
         <a id="fixed-block2" href="#" target="_blank"></a>
@@ -39,7 +52,7 @@
 				<div class="phone">+375 29 743 62 22 <br />+375 29 394 62 22</div>
                 <span>Бесплатная доставка по Минску и Беларуси</span>
 			</div>
-			<div class="nav">
+			<div class="nav" >
 				<?=$tMenubuf?>
 				<div class="cart-block">
 					<a href="<?=$_cart_url?>" title="Перейти в корзину">Корзина: <span class="totalCntContainer"></span></a>
@@ -224,5 +237,20 @@
 var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);})();</script>
 <!-- {/literal} END JIVOSITE CODE -->
 <script type="text/javascript">(window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=KcaqMWniQh0ynLtcJ*4rK4dv9x/VGnKDY1LTcTvHxsXE*SgP9GTRch8jDoNOtxMOEwkOrSRBB7apC62DBCYjiT79RLUF/9DuqQj0eTbULGXMSUJ44q0m3zzePbCvH9osd9G/hD3hdwJvJXZcw0oBcLRuxEvQCnwff6KWQxl81DA-';</script>
+<script type="text/javascript">
+$(document).ready(function() {
+		$("#product-menu").mmenu({
+            offCanvas: {
+               position  : "left",
+            }
+         });
+         $("#main-menu").mmenu({
+            offCanvas: {
+               position  : "right",
+            }
+         });
+      });
+</script>
+
 </body>
 </html>

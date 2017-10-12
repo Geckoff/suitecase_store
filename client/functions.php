@@ -41,7 +41,14 @@
     }
     
 	// Формирование меню категорий
-	function buildNavMenu($module_url, $tree_table, $id_tree = 0, $parrent_url = '', $lvl = 0, &$href = false, &$_buf = ''){
+	function buildNavMenu($module_url, $tree_table, $id_tree = 0,  $parrent_url = '', $lvl = 0, &$href = false, &$_buf = ''){
+		if ($parrent_url == "mob_menu") {
+			$parrent_url = "";	
+			$mob_menu = true;
+		}
+		else {
+			$mob_menu = false;	
+		}
 		global $MODULE_URL;
 		if($href === false){
 			$_buf = '';
@@ -50,7 +57,8 @@
 		}
 		$res = DB("select `id`, `title`, `id_tree`, `url` from `".$tree_table."` where `id_tree` = '".$id_tree."' and `active` = '1' and `delete` = '0' order by `sort` asc");
 		if(isset($res[0]) && !empty($res[0])){
-			$_buf .= '<ul class="menu_lvl_'.$lvl.'">';
+			$menu_level = (!$mob_menu) ? $lvl : "";
+			$_buf .= '<ul class="menu_lvl_'.$menu_level.'">';
 			if($parrent_url !== ''){
 				$href[$lvl] = $parrent_url;
 			}
@@ -70,7 +78,14 @@
 				for($i = 0; $i < $lvl; $i++){
 					$link .= $href[$i].'/';
 				}
-				$_buf .= '<li class="'.$_cl.'"><a href="'.$link.$value['url'].'">'.$value['title'].'</a>';
+				$menu_class = (!$mob_menu) ? $_cl : "";
+				if ($mob_menu && $value['url'] == 'ryukzaki-polar-1') {
+					$a_href = '#mm-2';
+				}
+				else {
+					$a_href = $link.$value['url'];	
+				}
+				$_buf .= '<li class="'.$menu_class.'"><a href="'.$a_href.'">'.$value['title'].'</a>';
 				buildNavMenu($module_url, $tree_table, $value['id'], $value['url'], $lvl, $href, $_buf);
 				$_buf .= '</li>';
 			}
