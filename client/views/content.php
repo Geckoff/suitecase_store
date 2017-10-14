@@ -1,7 +1,22 @@
 <body>
 <div class="mobile-nav">
-	<a href="#product-menu">Товары</a>
-	<a href="#main-menu">Меню</a>
+	<div class="mobile-nav-block">
+		<a style="display: block" href="#product-menu" id="nav-icon3" class="ham-icon-items">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</a>	
+		<a href="#product-menu">Товары</a>
+	</div>
+	<div class="mobile-nav-block">
+		<a href="#main-menu">Меню</a>
+		<a style="display: block" href="#main-menu" id="nav-icon4" class="ham-icon-main">
+			<span></span>
+			<span></span>
+			<span></span>
+		</a>	
+	</div>	
 </div>
 <div class="mobile-menu">
 	<nav id="main-menu">
@@ -239,17 +254,43 @@ var s = document.createElement('script'); s.type = 'text/javascript'; s.async = 
 <script type="text/javascript">(window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=KcaqMWniQh0ynLtcJ*4rK4dv9x/VGnKDY1LTcTvHxsXE*SgP9GTRch8jDoNOtxMOEwkOrSRBB7apC62DBCYjiT79RLUF/9DuqQj0eTbULGXMSUJ44q0m3zzePbCvH9osd9G/hD3hdwJvJXZcw0oBcLRuxEvQCnwff6KWQxl81DA-';</script>
 <script type="text/javascript">
 $(document).ready(function() {
-		$("#product-menu").mmenu({
-            offCanvas: {
-               position  : "left",
-            }
-         });
-         $("#main-menu").mmenu({
-            offCanvas: {
-               position  : "right",
-            }
-         });
-      });
+	$("#product-menu").mmenu({
+		navbar: {
+	        title: "Категории товаров"
+	    },
+	    offCanvas: {
+	       position  : "left",
+	    }
+	});
+	$("#main-menu").mmenu({
+		navbar: {
+	        title: "Меню"
+	    },
+		offCanvas: {
+		   position  : "right",
+		}
+	});
+	
+	var apiProducts = $("#product-menu").data( "mmenu" );
+	
+	apiProducts.bind( "open:start", function() {
+		$('.ham-icon-items').addClass('open');
+	});
+	
+	apiProducts.bind( "close:start", function() {
+		$('.ham-icon-items').removeClass('open');
+	});
+	
+	var apiMain = $("#main-menu").data( "mmenu" );
+	
+	apiMain.bind( "open:start", function() {
+		$('.ham-icon-main').addClass('open');
+	});
+	
+	apiMain.bind( "close:start", function() {
+		$('.ham-icon-main').removeClass('open');
+	});
+});
 </script>
 
 </body>
