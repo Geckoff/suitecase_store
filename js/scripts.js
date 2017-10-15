@@ -275,4 +275,8 @@ $(document).ready(function(){
 	
 	// Tooltip
 	$('.bs-tooltip').tooltip({placement: 'top'});
+	
+	//hamburger icon
+	
+	
 });

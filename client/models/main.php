@@ -34,12 +34,12 @@
 	
 	// Menu
 	$TMENU = buildMenu($ClientConfig['menu']);
-	$tMenubuf =  '<ul>';
+	$tMenubuf =  '<ul><li><a class="all-items-mobile" href="#product-menu">Категории товаров</a></li>';
 	for($i = 0, $cnt = count($TMENU); $i < $cnt; $i++){
 		if(isset($PAGE['page']['id']) && $TMENU[$i]['id_page'] == $PAGE['page']['id']) $_cl = 'class="active"'; else $_cl = '';
 		$tMenubuf .= '<li '.$_cl.'><a href="'.$TMENU[$i]['link'].'">'.$TMENU[$i]['title'].'</a></li>';
 	}
-	$tMenubuf .= '</ul>';
+	$tMenubuf .= '<li><a class="mobile-cart" style="display: none" href="/cart">Корзина</a></li></ul>';
 	
 	// Address block
 	$_mobile_list = getListSettingsByParent($ClientConfig['mobile']);

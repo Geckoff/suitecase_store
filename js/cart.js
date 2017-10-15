@@ -121,9 +121,9 @@
 				totalPrice = totalPrice + d.price * d.cnt;
 			});
 			if(totalCnt > 0){
-				tcc.removeClass('loading').text(totalCnt+' '+text_arr[plural_type(totalCnt)]);
+				tcc.removeClass('loading').html(totalCnt+' <span>'+text_arr[plural_type(totalCnt)]+'</span>');
 			}else{
-				tcc.removeClass('loading').text('(Пусто)');
+				tcc.removeClass('loading').html('<span class="cart-is-empty">(Пусто)</span>');
 			}
 			tpc.removeClass('loading').text(number_format(totalPrice,0,"."," ")+' руб');
 			return false;
