@@ -18,20 +18,6 @@
 		</a>	
 	</div>	
 </div>
-<div class="mobile-menu">
-	<nav id="main-menu">
-		<?=$tMenubuf?>
-	</nav>
-	<nav id="product-menu">
-		<?php $vari = false?>
-		<?php echo buildNavMenu($_catalog_url, $TABLE['catalog_tree'], $ClientConfig['catalog_root'], 'mob_menu') ?>
-	</nav>
-</div>
-<!--
-    <div>
-        <a id="fixed-block2" href="#" target="_blank"></a>
-    </div>
--->
     <?php
         if (isset($FIXED_BLOCK[0])) {
                 echo $FIXED_BLOCK[0]['content'];
@@ -197,6 +183,15 @@
             <div class="phone"><span>+375 29 394 62 22</span></div>
             <div class="owner">ИП Лавенецкий Андрей Владимирович, г. Могилев, ул. Фатина д. 6, кв. 192<br>Св-во №790693744 выдано администрацией Октябрьского района г. Могилева 7.05.2010<br>Публикация в торговом реестре: 31.01.2015</div>
         </div>
+	</div>
+	<div class="mobile-menu">
+		<nav id="main-menu">
+			<?=$tMenubuf?>
+		</nav>
+		<nav id="product-menu">
+			<?php $vari = false?>
+			<?php echo buildNavMenu($_catalog_url, $TABLE['catalog_tree'], $ClientConfig['catalog_root'], 'mob_menu') ?>
+		</nav>
 	</div>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">

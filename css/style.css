@@ -7176,6 +7176,31 @@ div.pluso {
 		font-size: 11px!important;
 		line-height: 22px;
 	}
+	
+	.right-col .page-content p {
+		font-size: 10px;
+	    line-height: 11px;
+	    margin-bottom: 4px;
+	}
+	
+	.page-content h2 {
+		font-size: 14px;
+	    line-height: 16px;
+	    margin: 0 0 4px;
+	}
+	
+	.page-title {
+		padding: 4px 8px;
+	}
+	
+	.page-title h1 {
+		font-size: 14px;
+		line-height: 18px;
+	}
+	
+	.page-content {
+		padding: 0 8px;
+	}
 }
 
 @media screen and (max-width: 400px) {
@@ -7230,7 +7255,7 @@ div.pluso {
 	}
 	
 	.mm-panels>.mm-panel.mm-hasnavbar {
-	    padding-top: 35px;
+	    padding-top: 38px;
 	}
 	
 	#product-menu .mm-prev:before {
@@ -7275,13 +7300,14 @@ div.pluso {
 		padding: 5px 0 5px 27px;
 	}
 	
-	.page-title {
-		padding: 4px 8px;
-	}
 	
 	.page-title h1 {
 		font-size: 15px;
 		line-height: 20px
+	}
+	
+	.mm-listview>li>a, .mm-listview>li>span {
+	    padding: 8px 10px 8px 20px;
 	}
 	
 }
@@ -7307,6 +7333,91 @@ div.pluso {
 		padding: 5px;
 		background: #717171 url(/img/cart.svg) 8px 2px / 35% no-repeat;
 		width: 70px;
+	}
+	
+	.header .logo {
+		width: 93px;
+	}
+	
+	.header .phone {
+	    font: bold 21px/25px 'Arial';
+	    padding-top: 5px;
+	}
+	
+	.header .phone + span {
+		font-size: 12px;
+	    padding-left: 19px;
+	    background-size: 6%;
+	    width: 100%;
+	    margin: 81px 0 0 0;
+	    text-align: center;
+	    background: none;
+	}
+	
+	.header .searchbox {
+	    top: 144px;
+	}
+	
+	.header-container {
+	    height: 187px;
+	    background: url(/img/header-bg.jpg) scroll 0 32px no-repeat;
+	}
+	
+	.product-list .product-img > div {
+		display: inline-block;
+		width: auto;
+	}
+	
+	.product-list.grid li {
+		width: calc(100% - 12px);
+		text-align: center;
+	}
+	
+	.product-list.grid li {
+		border-left: none;
+	}
+	
+	.product-list.grid .title {
+		height: 32px;
+	}
+	
+	.product-list .btn {
+	    display: inline-block;
+	    width: calc(45% - 18px);
+	}
+	
+	.product-list.grid li {
+		margin-top: 5px;
+		border-top: 1px solid #ccc;
+	}
+	
+	.product-list.grid li:first-of-type {
+		margin-top: 0;
+		border-top: none;
+	}
+	
+	.product-list {
+		padding: 0;
+	}
+	
+	.columns .left-col > .block:nth-child(2) {
+		margin-top: 15px;
+	}
+	
+	.columns .left-col > .block:nth-child(3) .block-content.mode > ul {
+		flex-wrap: wrap;
+	}
+	
+	.mode ul li {
+		width: 100%;
+		text-align: center;
+		background-position-x: 65px;
+	}
+	
+	.right-col .page-content p {
+		font-size: 10px;
+		line-height: 11px;
+		margin-bottom: 5px;
 	}
 }
 
