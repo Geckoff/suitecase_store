@@ -6711,6 +6711,42 @@ div.pluso {
 	white-space: normal;
 }
 
+div:not(.mm-navbar) .mm-listview a.mm-next {
+	width: 81px;
+}
+
+div:not(.mm-navbar) .mm-listview .mm-next+a, .mm-listview .mm-next+span {
+	margin-right: 81px;
+}
+
+*:not(.mm-navbar) > a > span.mm-sronly {
+	clip: auto!important;
+    width: 100%!important;
+    height: 100%!important;
+    font-size: 9px;
+    clip-path: none!important;
+    -webkit-clip-path: none!important;
+    padding-left: 7px!important;
+    padding-top: 0px!important;
+    line-height: 16px;
+}
+
+
+a.mm-next:after {
+	right: 38px;
+    top: 7px;
+}
+
+/* filter */
+
+.filter-by {
+	margin-right: 20px;
+}
+
+.short-desc-mobile {
+	display: none;
+} 
+
 @media screen and (max-width: 1000px) {
 	#wrapper, .header, .header-container, #footer {
 		width: 740px;
@@ -6789,6 +6825,43 @@ div.pluso {
 	
 	.cart-block-content {
 		display: none!important;
+	}
+	
+	.filter-by {
+		margin-right: 0;
+		margin-top: 10px;
+	}
+	
+	.pager.pager-bottom {
+		display: flex;
+	    flex-wrap: wrap;
+	    justify-content: center;
+	}
+	
+	#pager li a, #pager li span {
+		padding: 3px 8px;
+		font-size: 14px;
+	}
+	
+	.item-data {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.item-data .image-block {
+		order: 2;
+	}
+	
+	.item-data .info-block {
+		order: 1;
+	}
+	
+	.short-desc-desktop {
+		display: none;
+	}
+	
+	.short-desc-mobile {
+		display: block;
 	}
 	
 }
@@ -7310,6 +7383,33 @@ div.pluso {
 	    padding: 8px 10px 8px 20px;
 	}
 	
+	.jqTransformSelectWrapper li a {
+		font-size: 11px;
+	}
+	
+	.toolbar .sort-by label {
+		font-size: 11px;
+	}
+	
+	.jqTransformSelectWrapper > div > span {
+		font-size: 11px;
+	}
+	
+	.toolbar .sort-by .jqTransformSelectWrapper {
+		width: 144px;
+	}
+	
+	.amount span {
+		font-size: 11px;
+	}
+	
+	.pager {
+		padding: 8px;
+	}
+	
+	#pager li a, #pager li span {
+		font-size: 13px;
+	}
 }
 
 @media screen and (max-width: 340px) {
@@ -7418,6 +7518,32 @@ div.pluso {
 		font-size: 10px;
 		line-height: 11px;
 		margin-bottom: 5px;
+	}
+	
+	.amount {
+		display: block;
+	    line-height: 10px;
+	    text-align: center;
+	    margin-bottom: 7px;
+	}
+	
+	.pager {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	
+	.amount {
+		width: 100%;
+	}
+	
+	#pager li a, #pager li span {
+		padding: 3px 6px;
+		font-size: 12px;
+	}
+	
+	.mm-menu .mm-navbar a, .mm-menu .mm-navbar>* {
+	    font: 16px/25px "OpenSansBold";
 	}
 }
 

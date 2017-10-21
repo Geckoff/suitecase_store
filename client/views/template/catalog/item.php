@@ -84,7 +84,7 @@
 
 ?>
 
-<div class="cols clearfix">
+<div class="cols item-data clearfix">
 
 	<?php
 
@@ -151,6 +151,29 @@
 		}
 
 	?>
+	
+	
+	<div class="short-desc short-desc-mobile clearfix">
+
+		<?php
+
+			$OUTPUT['show_short'] = 0;
+
+			if($OUTPUT['show_short'] == 1){
+
+				echo $OUTPUT['short_description'].'<a class="more" href="'.$ClientConfig['HOST'].'/'.$_GET['pages'].'#description" data-tab="description">Показать полностью</a>';
+
+			}else {
+
+				echo $OUTPUT['description'];
+
+			}
+
+		?>
+
+	</div>
+	
+	
 
 	<div class="info-block">
 
@@ -186,7 +209,7 @@
 
 		?>
 
-		<div class="short-desc clearfix">
+		<div class="short-desc short-desc-desktop clearfix">
 
 			<?php
 
@@ -210,7 +233,7 @@
 
 </div>
 
-<noindex><div class="item-delivery-note"><font color="#FFFF33"><b>ВНИМАНИЕ! ATTENTION&nbsp;PLEASE!:)</b></font> Уважаемый покупатель! Если Вы насмотрели какой-либо товар, пожалуйста, постарайтесь не откладывать оформление заказа. Лучше заказать заранее (за 3-4-5 дней, в идеале - за неделю:)), <font color="#FFFF33"><b>даже (обратите внимание!) если Вы находитесь в столице</b></font>. Иногда это связано с наличием товара на складе (если Вам очень надо, то за 2-3 дня поторопим поставщиков), а также со сроком доставки в регионы (может занимать те же 2-3 дня). Звоните, пишите, оформляйте заказы - мы всегда Вам рады! <font color="#FFFF33"><b>Спасибо, что Вы с нами!;)</b></font></div><noindex>
+<noindex><div class="item-delivery-note"><font color="#FFFF33"><b>ВНИМАНИЕ! ATTENTION&nbsp;PLEASE!:)</b></font> Уважаемый покупатель! Если Вы насмотрели какой-либо товар, пожалуйста, постарайтесь не откладывать оформление заказа. Лучше заказать заранее (за 3-4-5 дней, в идеале - за неделю:)), <font color="#FFFF33"><b>даже (обратите внимание!) если Вы находитесь в столице</b></font>. Иногда это связано с наличием товара на складе (если Вам очень надо, то за 2-3 дня поторопим поставщиков), а также со сроком доставки в регионы (может занимать те же 2-3 дня). Звоните, пишите, оформляйте заказы - мы всегда Вам рады! <font color="#FFFF33"><b>Спасибо, что Вы с нами!;)</b></font></div></noindex>
 
 <div class="pluso" data-background="transparent" data-options="small,square,line,horizontal,counter,theme=08" data-services="vkontakte,odnoklassniki,facebook,twitter"></div>
 

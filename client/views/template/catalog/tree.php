@@ -34,6 +34,8 @@
 		<div class="pager clearfix">
 
 			<span class="amount"><?php echo $tc; ?></span>
+			
+			
 
 			<div class="sort-by">
 
@@ -54,6 +56,28 @@
 				</select>
 
 			</div>
+			
+			<?php if ($PID == 24 || $PID == 25): ?>
+			
+			<div class="sort-by filter-by">
+
+				<label>Размер:</label>
+
+				<select onchange="setLocation(this.value)">
+
+					<option value="<?php echo $CURRENT.'&casesize=all';?>" >Все</option>
+
+					<option value="<?php echo $CURRENT.'&casesize=large';?>" <?php if($_SESSION['casesize'] == 'large') echo 'selected="selected"'; ?> >Большие</option>
+
+					<option value="<?php echo $CURRENT.'&casesize=medium';?>" <?php if($_SESSION['casesize'] == 'medium') echo 'selected="selected"'; ?> >Средние</option>
+
+					<option value="<?php echo $CURRENT.'&casesize=compact';?>" <?php if($_SESSION['casesize'] == 'compact') echo 'selected="selected"'; ?> >Маленькие</option>
+
+				</select>
+
+			</div>
+			
+			<?php endif; ?>
 
 		</div>		
 
@@ -132,7 +156,7 @@
 
 	<div class="toolbar">
 
-		<div class="pager clearfix">
+		<div class="pager pager-bottom clearfix">
 
 			<?php
 

@@ -112,4 +112,6 @@
     $LEFT_BLOCK = getBlockByID($ClientConfig['left_block'], '`content`');
     $TOP_BLOCK = getBlockByID($ClientConfig['top_block'], '`content`');
     $CONTACTS_BLOCK = getBlockByID($ClientConfig['contacts_block'], '`content`');
+    
+    
 ?>
