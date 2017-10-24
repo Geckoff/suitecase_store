@@ -6756,6 +6756,11 @@ a.mm-next:after {
 	display: none;
 }
 
+.news-block a:last-of-type {
+	color: #ff1111;
+	text-decoration: underline;
+}
+
 @media screen and (max-width: 1000px) {
 	#wrapper, .header, .header-container, #footer {
 		width: 740px;
@@ -6969,7 +6974,7 @@ a.mm-next:after {
 	.call-now > p:first-of-type {
 		font-weight: bold;
 		font-size: 17px;
-		margin-bottom: 0;
+		margin-bottom: 9px;
 	}
 	
 	.call-now > p:last-of-type > span {
@@ -7041,6 +7046,32 @@ a.mm-next:after {
 	.similar li .product-info {
 		width: calc(19% - 10px);
 		padding-left: 10px;
+	}
+	
+	.params li > ul li >span {
+		width: 100%;
+	}
+	
+	.cartContainer td.price, .cartContainer td.summary {
+		width: 52px;
+	}
+	
+	.post-content img {
+		width: 100%;
+		height: auto;
+	}
+	
+	.post-content * {
+		font-size: 12px!important;
+		line-height: 15px!important;
+	}
+	
+	.post-content div.pluso {
+		position: relative;
+	}
+	
+	.post-content p img {
+		margin: 0;
 	}
 }
 
@@ -7509,6 +7540,25 @@ a.mm-next:after {
 	.call-now > p:last-of-type > span:last-of-type {
 		margin-left: 12px;
 	}
+	
+	.smform input[type=text], 
+	.smform textarea {
+		width: calc(100% - 12px);
+	}
+	
+	fieldset {
+		width: calc(100% - 20px);
+		padding: 0 10px;
+	}
+	
+	.smform legend {
+		margin: 10px;
+	}
+	
+	.news-block p {
+		font-size: 12px!important;
+		line-height: 15px!important;
+	}
 }
 
 @media screen and (max-width: 400px) {
@@ -7657,7 +7707,60 @@ a.mm-next:after {
 	
 	.zoomtracker {
 		width: 100%!important;
-		height: auto!important;
+		height: 107vw!important;
+	}
+	
+	.call-now > p:last-of-type > span {
+		width: 100%;
+		padding-left: 0;
+		text-align: center;
+		font-size: 19px;
+	    background: url(/img/phone-call.svg) 17% 1px / 29px no-repeat;
+		padding-bottom: 5px;
+		padding-top: 4px;
+	}
+	
+	.call-now > p:last-of-type > span:last-of-type {
+		margin-left: 0;
+		margin-top: 8px;
+	}
+	
+	.tab-nav li a {
+		padding: 5px 4px;
+	}
+	
+	#options .expand {
+		padding: 0;
+	}
+	
+	.tab-nav > li:first-of-type {
+		margin-left: 0;
+	}
+	
+	.params li > ul li {
+		margin: 0;
+		padding: 0;
+	}
+	
+	.cart-popup {
+		width: 87%;
+	}
+	
+	.cartContainer .img img {
+		width: 52px;
+	}
+	
+	.cartContainer td.img {
+		width: 52px;
+	}
+	
+	.cartContainer td.price, .cartContainer td.summary {
+		width: 49px;
+	}
+	
+	.news-block p:first-of-type {
+		width: 100%;
+		text-align: center;
 	}
 }
 
@@ -7793,6 +7896,25 @@ a.mm-next:after {
 	
 	.mm-menu .mm-navbar a, .mm-menu .mm-navbar>* {
 	    font: 16px/25px "OpenSansBold";
+	}
+	
+	div.pluso {
+		position: absolute;
+	}
+	
+	.tabs {
+		margin-top: 44px;	
+	}
+	
+	.call-now > p:last-of-type > span {
+		background: url(/img/phone-call.svg) 11% 1px / 29px no-repeat;
+	}
+	
+	.cartContainer td.count .remove-item {
+		width: 100%;
+	    margin-top: 8px;
+	    margin-left: 0;
+	    background-position: 50%;
 	}
 }
 

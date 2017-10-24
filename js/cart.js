@@ -306,7 +306,7 @@
 			$(settings.cartContainer).html('');
 			handler.checkCart($(settings.prodContainer),$(settings.totalCntContainer),$(settings.totalPriceContainer));
 			$(settings.addButton).data('cart',true).removeClass('disabled').removeClass('in-cart').html('Купить<span class="add"></span>');
-			handler.showMessage('<a href="'+settings.cartUrl+'" target="_blank">Корзина</a> пуста');
+			handler.showMessage('Спасибо за заказ! Наш консультант свяжется с вами в ближайшее время!');
 			return false;
 		}
 	};
