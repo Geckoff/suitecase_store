@@ -126,6 +126,18 @@
 				tcc.removeClass('loading').html('<span class="cart-is-empty">(Пусто)</span>');
 			}
 			tpc.removeClass('loading').text(number_format(totalPrice,0,"."," ")+' руб');
+			if ($('#shipping_price').length > 0) {
+				var shipPrice = 5;
+				if (totalPrice > 149) {
+					var shipPrice = 0; 
+					$('#ems_ship_price').text('Бесплатно');
+				}	 
+				else {
+					$('#ems_ship_price').text(shipPrice + ' руб.');	
+				}
+				$('#shipping_price').val(shipPrice);
+				$('#total_price').val(totalPrice);
+			}
 			return false;
 		},
 		getInfo : function(formdata,sm){
