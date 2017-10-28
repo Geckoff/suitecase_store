@@ -6,6 +6,16 @@
 <div class="page-title">
 	<h1><?=$TITLE?></h1>
 </div>
+<?php if ($TITLE == 'Акция! Интернет-магазин рюкзаков, сумок, чемоданов 1bags дарит подарки каждому покупателю!') : ?>
+	<script type="text/javascript">
+$(document).ready(function(){
+		$("head").append("<meta property='og:url' content='https://1bags.by/discounts/akciya-1bags-darit-podarki-kazhdomu-pokupatelyu' /> ");
+        $("head").append("<meta property='og:title' content=' Интернет-магазин рюкзаков, сумок, чемоданов 1bags.by дарит подарок каждому покупателю!' /> ");
+        $("head").append("<meta property='og:image' content='https://1bags.by/images/oblozhka-inside.jpg' /> ");
+        $("head").append("<meta property='og:description' content='1bags.by - это стильные и надежные чемоданы, рюкзаки, кошельки, спортивные, мужские и дорожные сумки. Каждый наш клиент получает бесплатный подарок! Не верите? Заходите и проверяйте!' />");
+});
+</script>
+<?php endif; ?>
 <div class="page-content">
 	<p class="posted"><!--<?=$OUTPUT['date']?>--></p><?=$OUTPUT['description']?>
     <script type="text/javascript">(function() {

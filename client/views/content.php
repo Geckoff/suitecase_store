@@ -1,4 +1,4 @@
-<body>
+<body>	
 <div class="mobile-nav">
 	<div class="mobile-nav-block">
 		<a style="display: block" href="#product-menu" id="nav-icon3" class="ham-icon-items">
@@ -7,7 +7,7 @@
 			<span></span>
 			<span></span>
 		</a>	
-		<a href="#product-menu">Товары</a>
+		<a id="product-menu-ham" href="#product-menu">Товары</a>
 	</div>
 	<div class="mobile-nav-block">
 		<a href="#main-menu">Меню</a>
@@ -23,6 +23,9 @@
                 echo $FIXED_BLOCK[0]['content'];
         }
     ?>
+    <div>
+    <a id="fixed-block2" href="/discounts/rasprodazha-na-1bags" target="_blank"></a>
+</div>
 	<div id="wrapper" class="clearfix">
 		<p style="display: none;" id="back-top"><a href="javascript: void(0)"><span></span></a></p>
 		<div class="header-container clearfix">
@@ -50,7 +53,10 @@
 					<input type="text" name="q" value="" placeholder="Поиск" />
 					<button id="search">Ok</button>
 				</form>
-				<div class="phone">+375 29 743 62 22 <br />+375 29 394 62 22</div>
+				<div class="phone">
+					<a href="tel:+375297436222">+375 29 743 62 22</a> 
+					<a href="tel:+375293946222">+375 29 394 62 22</a>
+				</div>
                 <span>Бесплатная доставка по Минску и Беларуси</span>
 			</div>
 			<div class="nav" >
@@ -251,7 +257,7 @@ var s = document.createElement('script'); s.type = 'text/javascript'; s.async = 
 $(document).ready(function() {
 	$("#product-menu").mmenu({
 		navbar: {
-	        title: "Категории товаров"
+	        title: "Каталог"
 	    },
 	    offCanvas: {
 	       position  : "left",
@@ -285,7 +291,78 @@ $(document).ready(function() {
 	apiMain.bind( "close:start", function() {
 		$('.ham-icon-main').removeClass('open');
 	});
+	
+	$('.all-items-mobile').on('click', function(){
+		setTimeout(function(){$('#product-menu-ham').click()}, 900);
+	});
+	
+	jQuery('.mm-listview .mm-sronly').text('Подразделы');
 });
+</script>
+
+<!-- Modal Window -->
+
+
+
+<?php if ($_COOKIE['modal'] != 'closed'): ?>
+
+<div class="art-modal">
+	<a id="modal-close" href="#">Закрыть</a>
+	<a id="modal-link" href="/discounts/rasprodazha-na-1bags" target="_blank">
+		<img src="/img/sales-modal.jpg" alt="Распрдажа">	
+	</a>
+</div>
+
+<?php endif; ?>
+
+<script>
+	// Modal window
+(function($){
+	$(document).ready(function(){
+		
+		var modal_status = get_cookie("modal");
+		var pages_quant = get_cookie("pages_quant");
+		
+		//if (modal_status !== "closed" && pages_quant >= 4 && pages_quant <= 6) {
+			console.log( 'asda');
+			var need_height = 1/4 * ($(document).height() - $(window).height()); 
+			$(window).scroll( function (e) {
+		        if ($(document).scrollTop() > need_height) {
+		            $('.art-modal').addClass('show-art-modal');
+		        }
+	    	});
+	    	
+	    	$('.art-modal i').on('click', function(){
+		    	disableModal(this);		    	
+	    	});
+	    	
+	    	$('.art-modal a').on('click', function(){
+		    	disableModal(this);		    	
+	    	});
+    	//}
+	});
+	
+	function get_cookie ( cookie_name )
+	{
+	  var results = document.cookie.match ( '(^|;) ?' + cookie_name + '=([^;]*)(;|$)' );
+	 
+	  if ( results )
+	    return ( unescape ( results[2] ) );
+	  else
+	    return null;
+	}
+	
+	function disableModal(elem) {
+		$(window).unbind('scroll');
+    	$(elem).parent().removeClass('show-art-modal');
+    	var now = new Date();
+    	now.setMonth(now.getMonth() + 1);
+    	var expirationTime = now.toGMTString();
+    	//console.log(expirationTime);
+    	document.cookie = "modal=closed; path=/; expires=" + expirationTime;
+	}
+	
+})(jQuery);
 </script>
 
 </body>
