@@ -1,3 +1,18 @@
+<?php
+	if (!isset($_COOKIE['modal'])) {
+		
+		setcookie('modal','opened',time()+60*60*24*7*30, '/');
+	}
+	if (!isset($_COOKIE['pages_quant'])) {
+		
+		setcookie('pages_quant','1',time()+60*60*24*7*30, '/');
+	}
+	elseif ($_COOKIE['pages_quant'] < 7) {
+		$kuka = $_COOKIE['pages_quant'] + 1;
+		setcookie('pages_quant',$kuka,time()+60*60*24*7*30, '/');	
+	}
+	//echo $_COOKIE['pages_quant'];
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -10,6 +25,7 @@
     <meta name="copyright" content="Фабрика проектов ©" /> 
     <meta http-equiv="reply-to" content="info@fpro.by" />
     <meta name='yandex-verification' content='58a0b97c2b1e78a6' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php if(isset($META['meta_title']) && !empty($META['meta_title'])) echo $META['meta_title']; else echo $TITLE; ?></title>
 	<base  href="<?php echo $ClientConfig["HOST"]; ?>" />
 
@@ -19,6 +35,8 @@
 	<link rel="stylesheet" type="text/css" href="/css/nivo-slider.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="/css/multizoom.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="/css/cart.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="/js/jquery.mmenu/jquery.mmenu.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="/js/jquery.mmenu/extensions/positioning/jquery.mmenu.positioning.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.2" media="all" />
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script type="text/javascript" src="//vk.com/js/api/openapi.js?116"></script>
@@ -60,6 +78,7 @@
     <script type="text/javascript" src="/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="/js/jquery.json-2.4.min.js"></script> 
     <script type="text/javascript" src="/js/cart.js?v=1.2"></script> 
+    <script type="text/javascript" src="/js/jquery.mmenu/jquery.mmenu.js?v=1.2"></script> 
     <script type="text/javascript" src="/js/scripts.js?v=1.2"></script> 
     <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -80,4 +99,13 @@
     <!--[if IE 9]>
 	  <script type="text/javascript" src="js/PIE_IE9.js"></script>
 	<![endif]-->
+	<?php if ($TITLE == 'Акция! Интернет-магазин рюкзаков, сумок, чемоданов 1bags дарит подарки каждому покупателю!'): ?>
+	<meta property='og:title' content=' Интернет-магазин рюкзаков, сумок, чемоданов 1bags.by дарит подарок каждому покупателю!' />
+	<meta property='og:image' content='https://1bags.by/images/oblozhka-inside.jpg' />
+	<meta property='og:description' content='1bags.by - это стильные и надежные чемоданы, рюкзаки, кошельки, спортивные, мужские и дорожные сумки. Каждый наш клиент получает бесплатный подарок! Не верите? Заходите и проверяйте!' />
+	<?php else: ?>
+	<meta property='og:title' content='<?=$ClientConfig['og-title'] ?>' />
+	<meta property='og:image' content='<?=$ClientConfig['og-image'] ?>' />
+	<meta property='og:description' content='<?=$ClientConfig['og-description'] ?>' />
+	<?php endif; ?>
 </head>
