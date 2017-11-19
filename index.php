@@ -1,6 +1,6 @@
 <?php
 /*
- * @author ООО "Фабрика проектов"
+ * @author "Project factory"
  * @copyright 2013
  */
     include_once dirname(__FILE__)."/client/main_controller.php";
